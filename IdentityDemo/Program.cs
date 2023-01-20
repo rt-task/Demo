@@ -36,6 +36,7 @@ app.UseHttpsRedirection();
 
 app.UseCors();
 
+//TODO Settimo punto
 app.UseAuthentication();
 
 app.UseAuthorization();

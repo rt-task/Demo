@@ -20,6 +20,7 @@ namespace IdentityDemo.Controllers
             _service = service;
         }
         
+        //TODO Ottavo passo
         [HttpPost("SignUp")]
         [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
@@ -32,6 +33,7 @@ namespace IdentityDemo.Controllers
                 BadRequest("Registration failed");
         }
 
+        //TODO Nono passo
         [HttpPost("SignIn")]
         [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]

@@ -22,6 +22,7 @@ namespace IdentityDemo.Extensions
 
         public static IServiceCollection ConfigureSwagger(this IServiceCollection services)
         {
+            //TODO Sesto passo
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo { Title = "IdentityDemo", Version = "v1" });
@@ -55,6 +56,7 @@ namespace IdentityDemo.Extensions
 
         public static IServiceCollection ConfigureOptions(this IServiceCollection services, IConfiguration configuration)
         {
+            //TODO Quinto passo
             services.Configure<MailboxAddress>(configuration, "Configuration:SmtpFrom");
             services.Configure<SmtpConfiguration>(configuration, "Configuration:SmtpConfiguration");
             services.Configure<JwtSettings>(configuration, "Configuration:JwtSettings");

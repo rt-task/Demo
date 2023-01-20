@@ -18,6 +18,7 @@ namespace IdentityDemo.Identity.Configuration
 
         public static IServiceCollection ConfigureAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
+            //TODO Terzo passo
             var jwtSettingsSection = configuration.GetSection("Configuration:JwtSettings");
             var jwtSettings = jwtSettingsSection.Get<JwtSettings>();
 
@@ -47,6 +48,7 @@ namespace IdentityDemo.Identity.Configuration
 
         public static IServiceCollection ConfigureIdentity(this IServiceCollection services)
         {
+            //TODO Secondo passo
             services.AddIdentityCore<IdentityUser<int>>(options =>
             {
                 options.User.RequireUniqueEmail = true;
@@ -66,6 +68,7 @@ namespace IdentityDemo.Identity.Configuration
 
         public static IServiceCollection ConfigureAuthorization(this IServiceCollection services)
         {
+            //TODO Quarto passo
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("Admin", policy =>
