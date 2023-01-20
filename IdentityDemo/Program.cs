@@ -1,16 +1,18 @@
 using IdentityDemo.Identity.Configuration;
 using IdentityDemo.Extensions;
+using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddFluentValidation(opt => opt.RegisterValidatorsFromAssemblyContaining<Program>());
+
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services
     .ConfigureOptions(builder.Configuration)
     .ConfigureSwagger()
     .ConfigureDIRules(builder.Configuration)
-    .RegisterValidators()
     .ConfigureCors(builder.Configuration);
 
 builder.Services
